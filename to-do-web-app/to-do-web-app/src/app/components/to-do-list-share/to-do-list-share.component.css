@@ -1,0 +1,8 @@
+.shared-list-container {
+    text-align: center;
+    position: absolute;
+    top: 35ex;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

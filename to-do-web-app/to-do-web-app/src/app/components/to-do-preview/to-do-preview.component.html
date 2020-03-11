@@ -1,0 +1,35 @@
+
+<div id="list-preview-div" class="panel panel-primary">
+
+    <div class="panel-heading">
+        
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-bell" *ngIf="toDoList.endDate != null"> </span>
+            {{toDoList.title}}
+            <span id="remove-span" class="glyphicon glyphicon-remove" (click)="removeToDoList()"> </span>
+        </h3>
+       
+    </div>
+
+    <div class="panel-body">
+        <p *ngIf="toDoList.endDate != undefined" id="exp-date"> Exp: {{ toDoList.endDate | date:'yyyy-MM-dd hh:mm a'}}</p>
+
+        <ng-template [ngIf]="toDoList.dtoItems.length > 0" [ngIfElse]="none">
+            <ul>
+                <li *ngFor="let item of toDoList.dtoItems" [ngClass]="{'crossed-item': item.isCompleted}"> {{item.content}} </li>
+            </ul>
+        </ng-template>
+        <ng-template #none>
+            <p> No items added  </p>
+        </ng-template>
+
+        <button id="share-btn" class="btn btn-secondary" (click)="shareToDoList(toDoList.id)"> Share </button>
+
+        <button id="edit-btn" class="btn btn-primary" (click)="redirectToEditPage(toDoList.id)"> Edit </button>
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,26 @@
+li {
+    width: 30%;
+}
+
+#remove-item-span {
+    float: right;
+}
+
+#remove-item-span:hover {
+    color: blue;
+    font-size: 16px;
+}
+
+.item-row {
+    margin-bottom: 1px;
+}
+
+small {
+    font-size: 13px;
+    color: red;
+}
+
+.item-descr {
+    position: relative;
+    left: 15px;
+}

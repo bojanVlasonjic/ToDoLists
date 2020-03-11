@@ -1,0 +1,28 @@
+<div id="nav-bar-div">
+    <div id="left-content">
+        <ul>
+            <li routerLink="/dashboard"> Dashboard </li>
+            <li routerLink="/to-do-list"> Add to do list  </li>
+            <li *ngIf="!auth.isLoggedIn" (click)="auth.login()" > Login  </li>
+            <li *ngIf="auth.isLoggedIn" (click)="auth.logout()"> Logout  </li>     
+        </ul>
+        <p id="user-data" *ngIf="auth.isLoggedIn"> Signed in: &nbsp; {{getUsername}}</p>
+    </div>
+
+    <div id="right-content">
+        <div class="input-group input-group-lg">
+            <input type="text" id="search-field" class="form-control" [(ngModel)]="searchValue"
+                placeholder="Search..." (keyup)="searchToDoLists()"> 
+        </div>
+    </div>
+</div>
+
+<div id="notification-window">
+    <p id="notification-message"></p>
+</div> 
+
+<router-outlet></router-outlet>
+
+
+
+

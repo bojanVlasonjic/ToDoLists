@@ -1,0 +1,36 @@
+<div class="shared-list-container">
+
+    <h1> Shared list </h1>
+
+    <br/>
+
+    <div id="shared-list" class="panel panel-primary" *ngIf="sharedList !== undefined">
+        <div class="panel-heading">
+            
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-bell" *ngIf="sharedList.endDate != null"> </span>
+                {{sharedList.title}}
+            </h3>
+        
+        </div>
+
+        <div class="panel-body">
+            <p *ngIf="sharedList.endDate != undefined" id="exp-date"> Exp: {{ sharedList.endDate | date:'yyyy-MM-dd hh:mm a'}}</p>
+
+            <ng-template [ngIf]="sharedList.dtoItems.length > 0" [ngIfElse]="none">
+                <ul>
+                    <li *ngFor="let item of sharedList.dtoItems" [ngClass]="{'crossed-item': item.isCompleted}"> {{item.content}} </li>
+                </ul>
+            </ng-template>
+            <ng-template #none>
+                <p> No items added  </p>
+            </ng-template>
+
+        </div>
+    </div>
+
+    <div *ngIf="sharedList == undefined">
+        <p> No shared lists </p>
+    </div>
+
+</div>

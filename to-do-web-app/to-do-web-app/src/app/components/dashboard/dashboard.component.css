@@ -1,0 +1,17 @@
+#dashboard-div {
+    position: relative;
+    top: 10ex;
+}
+
+#list-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+h2 {
+    text-align: center;
+    padding-bottom: 3ex;
+}
+

@@ -1,0 +1,12 @@
+<div id="dashboard-div" class="container">
+
+    <h2>To-Do-List Dashboard</h2>
+
+    <div id="list-container" dnd-sortable-container [sortableData]="toDoLists" *ngFor="let list of toDoLists">
+        <div dnd-sortable [sortableIndex]="list.position" [dragData]="list" (onDropSuccess)="updatePosition($event, list.position)">
+            <app-to-do-preview [toDoList]="list" (removeListEvent)="removeToDoList($event)"> </app-to-do-preview>
+        </div>
+    </div>
+
+</div>
+

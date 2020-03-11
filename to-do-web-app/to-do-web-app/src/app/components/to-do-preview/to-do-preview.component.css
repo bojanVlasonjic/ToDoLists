@@ -1,0 +1,53 @@
+
+#list-preview-div:hover {
+    box-shadow: 0px 4px 46px 0px rgba(0,0,0,0.72);
+}
+
+#list-preview-div {
+    margin-right: 2em;
+    margin-bottom: 2ex;
+    min-width: 18em;
+    min-height: 20ex;
+}
+
+#edit-btn {
+    position: relative;
+    float: right;
+    bottom: 0ex;
+}
+
+
+#remove-span {
+    float: right;
+}
+
+#remove-span:hover {
+    opacity: 0.4;
+}
+
+#exp-date {
+    position: relative;
+    left: 0ex;
+    top: 0ex;
+}
+
+#share-btn {
+    position: relative;
+    outline: none;
+    bottom: 0ex;
+    left: 3px;
+    background-color: #35586C;
+    color: white;
+}
+
+#share-btn:hover {
+    background-color: #68838B;
+}
+
+.crossed-item {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+
+

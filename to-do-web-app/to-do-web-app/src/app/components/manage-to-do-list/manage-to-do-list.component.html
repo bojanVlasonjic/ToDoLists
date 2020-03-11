@@ -1,0 +1,54 @@
+<div class="container centered-div">
+
+    <ng-template [ngIf]="!editPage" [ngIfElse]="editing">
+        <h2> Create to do list </h2>
+    </ng-template>
+    <ng-template #editing>
+        <h2> Edit to do list </h2>
+    </ng-template>
+    
+  
+   
+    <div class="form-group">
+        <label> Title: </label>
+        <input type="text" class="form-control" id="listTitle" placeholder="Enter title" required [(ngModel)]="toDoList.title"
+            name="listTitle" (focusout)="executeApiCall(listTitle.valid)" autocomplete="off" #listTitle="ngModel"/>
+        <small *ngIf="listTitle.touched && !listTitle.valid" class="form-text text-muted"> Title is required. </small>
+    </div>
+
+    <br/> <br/>
+
+    <!-- Reminder -->
+    <div class="form-group">
+        <label> Reminder date: </label>
+        <input type="datetime-local" class="form-control" name="reminder-date" [(ngModel)]="toDoList.endDate"
+            (focusout)="executeApiCall(listTitle.valid)" [min]="getToday()"/>
+    </div>
+
+    <br/> <br/>
+
+    <app-manage-to-do-item (itemEvent)="addItemToList($event)" [toDoListId]="toDoList.id"> </app-manage-to-do-item>
+    <Label> To do items: </Label>
+
+    <!-- Displayed items when editing a todo list-->
+    <ng-template [ngIf]="toDoList.dtoItems.length > 0" [ngIfElse]="noItems">
+        <div id="item-container" dnd-sortable-container [sortableData]="filterIncompletedItems" *ngFor="let item of filterIncompletedItems">
+            <div dnd-sortable [sortableIndex]="item.position" [dragData]="item" (onDropSuccess)="updatePosition($event, item.position)">
+                <span id="move-icon" class="glyphicon glyphicon-move"> </span>
+                <app-manage-to-do-item  [item]="item"  [toDoListId]="toDoList.id" (itemEvent)="removeItemFromList($event)"></app-manage-to-do-item>
+            </div>
+        </div>
+        <div id="completed-items-separator"></div>
+        
+        <app-manage-to-do-item *ngFor="let item of filterCompletedItems" [item]="item" 
+            [toDoListId]="toDoList.id" (itemEvent)="removeItemFromList($event)"> </app-manage-to-do-item>
+  
+            
+    </ng-template>
+
+    <ng-template #noItems> No items added </ng-template>
+
+
+        
+</div>
+

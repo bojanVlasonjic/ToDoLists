@@ -1,0 +1,41 @@
+
+
+<!-- Insert item area -->
+<div class="form-group" *ngIf="item.itemId === undefined">
+    <label>Item description: </label>
+    <input type="text" class="form-control" id="newItemDescription" name="newItemDescription" autocomplete="off" required
+        placeholder="Enter item description" (focusout)="createToDoItem()"[(ngModel)]="item.content"/>
+    <br/> <br/>
+</div>
+
+
+<!-- Displayed items when editing -->
+<div class="form-group row item-row" *ngIf="item.itemId !== undefined" draggable="true">
+    
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control item-descr" name="itemDescription"
+            [(ngModel)]="item.content" autocomplete="off" (focusout)="updateToDoItem()" />
+    </div>
+
+    <div class="form-group col-md-4">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="isCompleted" 
+                [(ngModel)]="item.isCompleted" (change)="updateToDoItem()">
+            <label class="custom-control-label" > &nbsp; Completed </label>
+        </div>
+    </div>
+
+    <div class="form-group col-md-2">
+        <span id="remove-item-span" class="glyphicon glyphicon-remove" (click)="removeToDoItem()"></span>    
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+    
