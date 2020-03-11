@@ -5,6 +5,20 @@ Is a web application for maintaining to-do lists (like [Google Keep](https://kee
 * [Web Client](#web-client)
 * [Security & Deployment](#security-&-deployment)
 
+## Getting started
+In order for the application to work, the sql database needs to be configured.
+- Download and install Microsoft Sql Server Management Studio (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
+- Download and install the SQL Express Server (https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- Run the SQL Server Management Studio
+- Select the existing server name (name of your pc) and connect
+
+After the database is configured, proceed with the following steps:
+- Run the backend server in the ToDo.Api folder (use Visual Studio)
+- The front end server uses Angular 8 so you should configure Angular and install node and Angular CLI.
+- Run the front end Angular server in the to-do-web-app folder (open the command line and use 'ng serve' command)
+
+Open the browser, navigate to localhost:4200. Register, login and proceed...
+
 ## The API
 
 An REST API solution which exposes CRUD & search endpoints. Reminder functionality 
