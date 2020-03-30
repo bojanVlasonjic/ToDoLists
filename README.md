@@ -6,11 +6,12 @@ Is a web application for maintaining to-do lists (like [Google Keep](https://kee
 * [Security & Deployment](#security-&-deployment)
 
 ## Getting started
-In order for the application to work, the sql database needs to be configured.
+In order for the application to work properly, the sql database needs to be configured.
 - Download and install Microsoft Sql Server Management Studio (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
 - Download and install the SQL Express Server (https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - Run the SQL Server Management Studio
 - Select the existing server name (name of your pc) and connect
+- In the 'appsettings.json' file of the ToDo.Api, within the ConnectionString, replace the 'YOUR_SERVER_NAME' substring with the server name from the previous step.
 
 After the database is configured, proceed with the following steps:
 - Run the backend server in the ToDo.Api folder (use Visual Studio)
