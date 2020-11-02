@@ -14,6 +14,7 @@ In order for the application to work properly, the sql database needs to be conf
 - In the 'appsettings.json' file of the ToDo.Api, within the ConnectionString, replace the 'YOUR_SERVER_NAME' substring with the server name from the previous step.
 
 After the database is configured, proceed with the following steps:
+- Execute the migrations (Open package manager console and execute the 'update-database' command)
 - Run the backend server in the ToDo.Api folder (use Visual Studio)
 - The front end server uses Angular 8 so you should configure Angular and install node and Angular CLI.
 - Run the front end Angular server in the to-do-web-app folder (open the command line and use 'ng serve' command)
